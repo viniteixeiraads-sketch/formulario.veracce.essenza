@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veracce Essenza | Estratégia de Tráfego Pago para Gerar Mais Clientes</title>
+<meta name="description" content="Diagnóstico estratégico de tráfego pago com a Veracce Essenza. Meta Ads e Google Ads estruturados com dados, não com achismo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F8F7F0;
+    --surface:#FFFFFE;
+    --ink:#141F12;
+    --ink-soft:#5B6553;
+    --ink-faint:#8D9683;
+    --border:#E3E0D2;
+    --blue:#34C759;
+    --blue-hover:#2AAB4B;
+    --blue-dark:#0A130A;
+    --navy:#152414;
+    --blue-soft:#F6EEDB;
+    --gold:#C99A46;
+    --gold-soft:#E7C88A;
+    --green:#12875A;
+    --radius-lg:24px;
+    --radius-md:16px;
+    --radius-sm:10px;
+    --shadow-card:0 1px 2px rgba(11,14,20,0.04), 0 8px 24px rgba(11,14,20,0.06);
+    --shadow-lift:0 20px 60px rgba(15,31,82,0.18);
+    --maxw:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;color:var(--ink);}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;
+    letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);
+    margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue);}
+  section{position:relative;}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 28px;border-radius:100px;font-weight:600;font-size:15.5px;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--blue);color:#fff;
+    box-shadow:0 1px 2px rgba(52,199,89,0.18), 0 10px 24px rgba(52,199,89,0.3);
+  }
+  .btn-primary:hover{background:var(--blue-hover);transform:translateY(-2px);box-shadow:0 4px 10px rgba(52,199,89,0.22), 0 16px 32px rgba(52,199,89,0.36);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--border);}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-full{width:100%;}
+  .btn svg{width:18px;height:18px;flex-shrink:0;}
+
+  /* ===== NAV ===== */
+  .nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(247,248,250,0.85);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16.5px;}
+  .brand-mark{width:34px;height:34px;border-radius:9px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .brand-mark svg{width:17px;height:17px;}
+  .nav-cta{padding:12px 22px;font-size:14.5px;}
+  .nav-links{display:flex;gap:32px;font-size:14.5px;color:var(--ink-soft);}
+  .nav-links a:hover{color:var(--ink);}
+  @media (max-width:860px){.nav-links{display:none;}}
+
+  /* ===== HERO ===== */
+  .hero{padding:76px 0 88px;overflow:hidden;}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
+  .badge{
+    display:flex;align-items:center;gap:6px;padding:7px 13px;border-radius:100px;
+    background:var(--surface);border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--ink-soft);
+  }
+  .badge svg{width:13px;height:13px;color:var(--blue);}
+  h1.headline{font-size:clamp(34px,4.6vw,54px);line-height:1.08;margin-bottom:22px;}
+  h1.headline em{font-style:normal;color:var(--gold);}
+  .hero-sub{font-size:18px;color:var(--ink-soft);max-width:520px;margin-bottom:34px;}
+  .hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:36px;}
+  .hero-micro{font-size:13px;color:var(--ink-faint);}
+  .trust-row{display:flex;gap:28px;flex-wrap:wrap;padding-top:26px;border-top:1px solid var(--border);}
+  .trust-item{display:flex;flex-direction:column;gap:2px;}
+  .trust-item .num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;}
+  .trust-item .lbl{font-size:12.5px;color:var(--ink-faint);}
+
+  /* hero visual — signature funnel dashboard */
+  .hero-visual{position:relative;}
+  .funnel-card{
+    background:var(--navy);border-radius:var(--radius-lg);padding:28px 26px 24px;
+    box-shadow:var(--shadow-lift);color:#fff;position:relative;overflow:hidden;
+  }
+  .funnel-card::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(600px 240px at 100% 0%, rgba(201,154,70,0.3), transparent 60%);
+    pointer-events:none;
+  }
+  .funnel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;position:relative;}
+  .funnel-head .title{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.05em;color:#9AA6C7;text-transform:uppercase;}
+  .live-dot{display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7CE3A6;}
+  .live-dot span{width:6px;height:6px;border-radius:50%;background:#3ADB7C;animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
+  .funnel-stage{margin-bottom:16px;position:relative;}
+  .funnel-stage-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+  .funnel-stage-name{font-size:13px;color:#C4CBE0;}
+  .funnel-stage-val{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;}
+  .funnel-track{height:10px;border-radius:6px;background:rgba(255,255,255,0.08);overflow:hidden;}
+  .funnel-fill{height:100%;border-radius:6px;width:0%;background:linear-gradient(90deg,#34C759,#A6E6B8);transition:width 1.4s cubic-bezier(.16,1,.3,1);}
+  .funnel-foot{display:flex;justify-content:space-between;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08);position:relative;}
+  .funnel-metric .lbl{font-size:11px;color:#8B94B3;margin-bottom:3px;}
+  .funnel-metric .val{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:#fff;}
+  .funnel-metric .val.up{color:#3ADB7C;}
+  .float-chip{
+    position:absolute;background:#fff;border-radius:var(--radius-sm);padding:10px 14px;
+    box-shadow:var(--shadow-card);display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;
+  }
+  .float-chip svg{width:15px;height:15px;color:var(--blue);}
+  .chip-1{top:-14px;left:-18px;}
+  .chip-2{bottom:14px;right:-16px;}
+  @media (max-width:900px){.float-chip{display:none;}}
+
+  @media (max-width:960px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero{padding:44px 0 56px;}
+    .trust-row{gap:22px;}
+  }
+
+  /* ===== SECTION SHELLS ===== */
+  .sec{padding:96px 0;}
+  .sec-head{max-width:640px;margin-bottom:52px;}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .sec-title{font-size:clamp(26px,3.2vw,38px);line-height:1.14;}
+  .sec-desc{color:var(--ink-soft);font-size:16.5px;margin-top:14px;}
+  .sec-dark{background:var(--navy);color:#fff;}
+  .sec-dark .eyebrow{color:var(--gold-soft);}
+  .sec-dark .eyebrow::before{background:var(--gold-soft);}
+  .sec-dark h2,.sec-dark h3,.sec-dark h4{color:#fff;}
+  .sec-dark .sec-desc{color:#B2B9D4;}
+  @media (max-width:640px){.sec{padding:64px 0;}}
+
+  /* ===== PAIN SECTION ===== */
+  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .pain-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+    padding:26px 22px;transition:border-color .2s ease, transform .2s ease;
+  }
+  .pain-card:hover{border-color:#C7CEDD;transform:translateY(-3px);}
+  .pain-icon{width:38px;height:38px;border-radius:10px;background:#FDEEEE;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .pain-icon svg{width:19px;height:19px;color:#D64545;}
+  .pain-card p{font-size:15px;font-weight:500;color:var(--ink);}
+  @media (max-width:900px){.pain-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.pain-grid{grid-template-columns:1fr;}}
+
+  /* ===== PROCESS PATH (Como posso ajudar) ===== */
+  .path{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);}
+  .path-row{display:flex;gap:24px;padding:28px 30px;align-items:flex-start;}
+  .path-row + .path-row{border-top:1px solid var(--border);}
+  .path-index{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:var(--gold);width:44px;flex-shrink:0;padding-top:3px;}
+  .path-body h4{font-size:18px;margin-bottom:6px;}
+  .path-body p{color:var(--ink-soft);font-size:15px;max-width:640px;}
+  @media (max-width:640px){.path-row{padding:22px;gap:14px;}}
+
+  /* ===== DIFFERENTIATORS ===== */
+  .diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .diff-card{background:var(--blue-soft);border-radius:var(--radius-md);padding:24px 22px;}
+  .diff-check{width:30px;height:30px;border-radius:8px;background:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .diff-check svg{width:16px;height:16px;color:#fff;}
+  .diff-card p{font-size:15px;font-weight:600;}
+  @media (max-width:900px){.diff-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.diff-grid{grid-template-columns:1fr;}}
+
+  /* ===== TIMELINE (Como funciona) ===== */
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .tl-step{padding:0 20px 0 0;position:relative;}
+  .tl-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;color:var(--gold);margin-bottom:14px;}
+  .tl-step h4{font-size:17px;margin-bottom:8px;}
+  .tl-step p{font-size:14.5px;color:var(--ink-soft);}
+  .tl-bar{height:2px;background:var(--border);margin-bottom:24px;position:relative;}
+  .tl-bar::after{content:"";position:absolute;left:0;top:-3px;width:8px;height:8px;border-radius:50%;background:var(--gold);}
+  @media (max-width:900px){.timeline{grid-template-columns:1fr 1fr;row-gap:36px;}}
+  @media (max-width:560px){.timeline{grid-template-columns:1fr;}}
+
+  /* ===== FOR WHOM ===== */
+  .whom-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .whom-item{
+    display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:var(--radius-sm);
+    background:var(--surface);border:1px solid var(--border);
+  }
+  .whom-item svg{width:20px;height:20px;color:var(--blue);flex-shrink:0;}
+  .whom-item span{font-size:15px;font-weight:500;}
+  @media (max-width:700px){.whom-list{grid-template-columns:1fr;}}
+
+  /* ===== AFTER SUBMIT STEPS ===== */
+  .after-steps{display:flex;flex-direction:column;gap:0;}
+  .after-step{display:flex;gap:20px;padding:22px 0;}
+  .after-step + .after-step{border-top:1px solid rgba(255,255,255,0.1);}
+  .after-dot{
+    width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.25);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:#fff;
+  }
+  .after-step.active .after-dot{background:var(--blue);border-color:var(--blue);}
+  .after-step h4{font-size:16.5px;margin-bottom:4px;color:#fff;}
+  .after-step p{font-size:14.5px;color:#B2B9D4;}
+
+  /* ===== FORM SECTION ===== */
+  .form-sec{background:var(--surface);}
+  .form-shell{display:grid;grid-template-columns:0.85fr 1.15fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);border:1px solid var(--border);}
+  .form-side{background:var(--navy);color:#fff;padding:48px 40px;}
+  .form-side h3{color:#fff;font-size:25px;margin-bottom:16px;}
+  .form-side > p{color:#B2B9D4;font-size:15px;margin-bottom:32px;}
+  .form-panel{background:var(--surface);padding:44px 40px;}
+  .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .field{margin-bottom:16px;}
+  .field.full{grid-column:1/-1;}
+  .field label{display:block;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:7px;}
+  .field input,.field select{
+    width:100%;padding:13px 14px;border-radius:10px;border:1.5px solid var(--border);
+    font-size:14.5px;font-family:inherit;color:var(--ink);background:#fff;transition:border-color .15s ease;
+  }
+  .field input:focus,.field select:focus{border-color:var(--blue);outline:none;}
+  .field select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23525A68' stroke-width='1.6'><path d='M5 7l5 5 5-5'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+  .form-note{display:flex;align-items:flex-start;gap:10px;margin-top:18px;font-size:12.5px;color:var(--ink-faint);}
+  .form-note svg{width:15px;height:15px;flex-shrink:0;margin-top:1px;color:var(--ink-faint);}
+  @media (max-width:900px){
+    .form-shell{grid-template-columns:1fr;}
+    .field-grid{grid-template-columns:1fr;}
+    .form-side,.form-panel{padding:36px 26px;}
+  }
+
+  /* ===== FAQ ===== */
+  .faq-list{max-width:760px;margin:0 auto;border-top:1px solid var(--border);}
+  .faq-item{border-bottom:1px solid var(--border);}
+  .faq-q{
+    width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:22px 4px;text-align:left;font-size:16px;font-weight:600;color:var(--ink);
+  }
+  .faq-q svg{width:18px;height:18px;flex-shrink:0;transition:transform .25s ease;color:var(--ink-soft);}
+  .faq-item.open .faq-q svg{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .faq-a p{padding:0 4px 22px;color:var(--ink-soft);font-size:15px;max-width:640px;}
+
+  /* ===== FINAL CTA ===== */
+  .final-cta{background:linear-gradient(135deg,var(--navy) 0%, var(--blue-dark) 100%);border-radius:var(--radius-lg);padding:64px 48px;text-align:center;position:relative;overflow:hidden;}
+  .final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 240px at 50% 0%, rgba(201,154,70,0.35), transparent 65%);}
+  .final-cta > *{position:relative;}
+  .final-cta h2{color:#fff;font-size:clamp(24px,3.4vw,36px);max-width:640px;margin:0 auto 16px;}
+  .final-cta p{color:#B2B9D4;max-width:520px;margin:0 auto 32px;font-size:15.5px;}
+  .exclusive-note{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-size:13px;color:#8B94B3;}
+  .exclusive-note svg{width:15px;height:15px;color:var(--gold-soft);}
+
+  /* ===== FOOTER ===== */
+  footer{padding:40px 0 100px;border-top:1px solid var(--border);}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer .brand{font-size:14.5px;}
+  footer .fine{font-size:13px;color:var(--ink-faint);}
+  @media (max-width:640px){footer{padding-bottom:120px;}}
+
+  /* ===== MOBILE STICKY CTA ===== */
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--surface);
+    border-top:1px solid var(--border);padding:12px 16px;display:none;
+    box-shadow:0 -8px 24px rgba(11,14,20,0.08);
+  }
+  .sticky-cta .btn{width:100%;}
+  @media (max-width:760px){.sticky-cta{display:block;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+      </span>
+      Veracce Essenza
+    </div>
+    <div class="nav-links">
+      <a href="#dores">Diagnóstico</a>
+      <a href="#metodo">Método</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#faq">Dúvidas</a>
+    </div>
+    <a href="#formulario" class="btn btn-primary nav-cta">Solicitar diagnóstico</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-badges">
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Meta Ads</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Google Ads</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l6 6L21 6"/></svg>Estratégia personalizada</span>
+      </div>
+      <h1 class="headline">Seus anúncios estão gerando cliques. <em>Não estão gerando clientes.</em></h1>
+      <p class="hero-sub">Estruturamos campanhas de tráfego pago com diagnóstico, estratégia e dados — não com achismo. Preencha o formulário e receba uma análise sobre onde sua operação de anúncios está perdendo oportunidades.</p>
+      <div class="hero-actions">
+        <a href="#formulario" class="btn btn-primary">
+          Quero meu diagnóstico
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="hero-micro">Leva 2 minutos. Análise individual, sem modelo pronto.</span>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><span class="num">100%</span><span class="lbl">Estratégia sob medida por negócio</span></div>
+        <div class="trust-item"><span class="num">Meta + Google</span><span class="lbl">Gestão integrada de mídia paga</span></div>
+        <div class="trust-item"><span class="num">Semanal</span><span class="lbl">Ciclo de otimização e reporte</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="funnel-card">
+        <div class="chip-1 float-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Custo por lead em queda</div>
+        <div class="funnel-head">
+          <span class="title">Funil de aquisição</span>
+          <span class="live-dot"><span></span>em otimização</span>
+        </div>
+        <div class="funnel-stage">
+          <div class="funnel-stage-top"><span class="funnel-stage-name">Cliques qualificados</span><span class="funnel-stage-val" data-count="4820">0</span></div>
+          <div class="funnel-track"><div class="funnel-fill" data-width="100"></div></div>
+        </div>
+        <div class="funnel-stage">
+          <div class="funnel-stage-top"><span class="funnel-stage-name">Leads gerados</span><span class="funnel-stage-val" data-count="612">0</span></div>
+          <div class="funnel-track"><div class="funnel-fill" data-width="68"></div></div>
+        </div>
+        <div class="funnel-stage">
+          <div class="funnel-stage-top"><span class="funnel-stage-name">Reuniões marcadas</span><span class="funnel-stage-val" data-count="184">0</span></div>
+          <div class="funnel-track"><div class="funnel-fill" data-width="42"></div></div>
+        </div>
+        <div class="funnel-stage">
+          <div class="funnel-stage-top"><span class="funnel-stage-name">Propostas enviadas</span><span class="funnel-stage-val" data-count="97">0</span></div>
+          <div class="funnel-track"><div class="funnel-fill" data-width="24"></div></div>
+        </div>
+        <div class="funnel-foot">
+          <div class="funnel-metric"><div class="lbl">Custo por lead</div><div class="val up">↓ 31%</div></div>
+          <div class="funnel-metric"><div class="lbl">Taxa de conversão</div><div class="val up">↑ 2.4x</div></div>
+        </div>
+        <div class="chip-2 float-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Diagnóstico baseado em dados</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="sec" id="dores">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">O cenário mais comum</span>
+      <h2 class="sec-title">Você está passando por isso?</h2>
+      <p class="sec-desc">Se pelo menos um desses pontos soa familiar, o problema provavelmente não é o anúncio em si — é a falta de estratégia por trás dele.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l18 18M10.5 10.5a3 3 0 004 4"/><path d="M12 5c5 0 8 7 8 7a13 13 0 01-2.3 3.1M6.2 6.2A13 13 0 004 12s3 7 8 7c1 0 2-.2 2.9-.6"/></svg></div><p>Anúncios rodando sem gerar resultado real</p></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/><path d="M17 7L7 17"/></svg></div><p>Muito clique, pouca venda no final do funil</p></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></div><p>Agência que só "impulsiona post", sem estratégia</p></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9M10 21V3M16 21v-7M22 21H2"/></svg></div><p>Falta de estratégia clara por trás das campanhas</p></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div><p>Custo por lead cada vez mais alto</p></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 3h-6v6"/></svg></div><p>Concorrentes aparecendo mais e roubando espaço</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="metodo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Como posso ajudar</span>
+      <h2 class="sec-title">Um método, não uma promessa</h2>
+      <p class="sec-desc">Trabalho em cima de um processo estruturado. Cada etapa existe para reduzir risco e aumentar a previsibilidade do resultado.</p>
+    </div>
+    <div class="path">
+      <div class="path-row">
+        <span class="path-index">01</span>
+        <div class="path-body"><h4>Diagnóstico</h4><p>Analisamos sua operação atual: contas de anúncio, funil comercial, ofertas e concorrência — para entender exatamente onde está o gargalo.</p></div>
+      </div>
+      <div class="path-row">
+        <span class="path-index">02</span>
+        <div class="path-body"><h4>Estratégia</h4><p>Defino a abordagem de mídia, segmentação e mensagem com base no diagnóstico — nada de campanha genérica de prateleira.</p></div>
+      </div>
+      <div class="path-row">
+        <span class="path-index">03</span>
+        <div class="path-body"><h4>Implementação</h4><p>Estruturamos e colocamos as campanhas no ar em Meta Ads e/ou Google Ads, com rastreamento correto desde o primeiro clique.</p></div>
+      </div>
+      <div class="path-row">
+        <span class="path-index">04</span>
+        <div class="path-body"><h4>Otimização</h4><p>Acompanhamos os dados semana a semana e ajustamos o que precisa ser ajustado — sem esperar o orçamento inteiro ser gasto para agir.</p></div>
+      </div>
+      <div class="path-row">
+        <span class="path-index">05</span>
+        <div class="path-body"><h4>Escala</h4><p>Uma vez validado o que funciona, aumentamos o investimento com controle, mantendo o custo por resultado sob controle.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Diferenciais</span>
+      <h2 class="sec-title">Por que trabalhar com a Veracce Essenza</h2>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card"><div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></div><p>Estratégias personalizadas para cada negócio</p></div>
+      <div class="diff-card"><div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></div><p>Gestão baseada em dados, não em opinião</p></div>
+      <div class="diff-card"><div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></div><p>Comunicação transparente em cada etapa</p></div>
+      <div class="diff-card"><div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></div><p>Acompanhamento constante da operação</p></div>
+      <div class="diff-card"><div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></div><p>Otimização semanal das campanhas</p></div>
+      <div class="diff-card"><div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></div><p>Foco real em ROI, não em vaidade</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="como-funciona">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Como funciona</span>
+      <h2 class="sec-title">Do primeiro contato à campanha rodando</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-step"><div class="tl-bar"></div><div class="tl-num">01</div><h4>Diagnóstico</h4><p>Entendemos seu negócio, seu mercado e o que já foi tentado até aqui.</p></div>
+      <div class="tl-step"><div class="tl-bar"></div><div class="tl-num">02</div><h4>Planejamento</h4><p>Monto a estratégia de mídia, oferta e segmentação ideal para o momento do negócio.</p></div>
+      <div class="tl-step"><div class="tl-bar"></div><div class="tl-num">03</div><h4>Execução</h4><p>Colocamos as campanhas no ar com estrutura, rastreamento e criativos alinhados à estratégia.</p></div>
+      <div class="tl-step"><div class="tl-bar"></div><div class="tl-num">04</div><h4>Crescimento</h4><p>Otimizamos e escalamos com base em dados reais, mês após mês.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Para quem é</span>
+      <h2 class="sec-title">Negócios que ajudamos a crescer</h2>
+    </div>
+    <div class="whom-list">
+      <div class="whom-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span>Empresários que querem mais previsibilidade nas vendas</span></div>
+      <div class="whom-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg><span>Prestadores de serviço que dependem de indicação</span></div>
+      <div class="whom-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6"/></svg><span>Clínicas que precisam de agenda cheia</span></div>
+      <div class="whom-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg><span>Escritórios que querem mais oportunidades qualificadas</span></div>
+      <div class="whom-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg><span>Empresas locais que já anunciam, mas sem resultado</span></div>
+      <div class="whom-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Negócios que nunca anunciaram e não sabem por onde começar</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Transparência total</span>
+      <h2 class="sec-title">O que acontece depois que você preenche o formulário</h2>
+    </div>
+    <div class="after-steps">
+      <div class="after-step active"><div class="after-dot">1</div><div><h4>Você preenche o formulário</h4><p>Leva cerca de 2 minutos. As perguntas ajudam a gente a entender seu momento atual.</p></div></div>
+      <div class="after-step active"><div class="after-dot">2</div><div><h4>Analisamos suas respostas</h4><p>Avaliamos segmento, cidade, investimento atual e objetivo antes de qualquer contato.</p></div></div>
+      <div class="after-step active"><div class="after-dot">3</div><div><h4>Contato pelo WhatsApp</h4><p>Falamos diretamente com você para confirmar informações e alinhar expectativas.</p></div></div>
+      <div class="after-step active"><div class="after-dot">4</div><div><h4>Reunião estratégica</h4><p>Conversamos com calma sobre o seu negócio, seu mercado e seus objetivos.</p></div></div>
+      <div class="after-step active"><div class="after-dot">5</div><div><h4>Proposta personalizada</h4><p>Você recebe uma proposta feita sob medida — nunca um pacote fechado genérico.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec form-sec" id="formulario">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Diagnóstico gratuito</span>
+      <h2 class="sec-title">Solicite sua análise estratégica</h2>
+      <p class="sec-desc">Preencha o formulário abaixo. As respostas ajudam a gente a chegar na conversa já com contexto sobre o seu negócio.</p>
+    </div>
+
+    <div class="form-shell">
+      <div class="form-side">
+        <h3>Por que responder essas perguntas?</h3>
+        <p>Quanto mais contexto a gente tiver antes da nossa conversa, mais direto e útil conseguimos ser — sem enrolação, sem discurso pronto.</p>
+        <div class="after-steps">
+          <div class="after-step active"><div class="after-dot">1</div><div><h4>Análise individual</h4><p>Cada resposta é lida antes do contato, não existe fila automática.</p></div></div>
+          <div class="after-step active"><div class="after-dot">2</div><div><h4>Contato via WhatsApp</h4><p>Você fala com a gente, não com um robô ou um SDR terceirizado.</p></div></div>
+          <div class="after-step active"><div class="after-dot">3</div><div><h4>Sem compromisso</h4><p>A conversa inicial serve para avaliar se faz sentido para os dois lados.</p></div></div>
+        </div>
+      </div>
+
+      <form class="form-panel" id="leadForm">
+        <div class="field-grid">
+          <div class="field full">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+          </div>
+          <div class="field">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required>
+          </div>
+          <div class="field">
+            <label for="segmento">Segmento</label>
+            <input type="text" id="segmento" name="segmento" placeholder="Ex: clínica odontológica" required>
+          </div>
+          <div class="field">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Sua cidade" required>
+          </div>
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+          </div>
+          <div class="field">
+            <label for="instagram">Instagram</label>
+            <input type="text" id="instagram" name="instagram" placeholder="@seuinstagram">
+          </div>
+          <div class="field">
+            <label for="site">Site</label>
+            <input type="text" id="site" name="site" placeholder="www.seusite.com.br">
+          </div>
+          <div class="field full">
+            <label for="investimento">Quanto investe em anúncios hoje?</label>
+            <select id="investimento" name="investimento" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option>Nunca anunciei</option>
+              <option>Até R$1.000</option>
+              <option>R$1.000–3.000</option>
+              <option>R$3.000–10.000</option>
+              <option>Acima de R$10.000</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="objetivo">Qual seu principal objetivo?</label>
+            <select id="objetivo" name="objetivo" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option>Gerar leads</option>
+              <option>Vender mais</option>
+              <option>Escalar</option>
+              <option>Reduzir custo</option>
+              <option>Outro</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          Quero receber meu diagnóstico
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <div class="form-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+          Seus dados são usados apenas para análise do seu negócio e contato via WhatsApp. Nada de spam.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2 class="sec-title">Perguntas antes de preencher</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Preciso já estar anunciando para falar com você?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Não. Trabalho tanto com negócios que nunca anunciaram quanto com quem já investe em mídia paga e quer melhorar o resultado.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Qual o investimento mínimo em mídia para começar?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Depende do segmento e do objetivo. Esse é justamente um dos pontos avaliados no diagnóstico, antes de qualquer recomendação.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Em quanto tempo eu vejo resultado?</button>
+        <div class="faq-a"><p>Varia conforme o segmento, a concorrência e o ponto de partida do negócio. Prefiro alinhar expectativas realistas na conversa do que prometer prazos genéricos.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Você atende qualquer segmento?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Atendemos principalmente empresários, prestadores de serviço, clínicas, escritórios e negócios locais. Se o seu segmento não faz sentido para tráfego pago, a gente te diz isso diretamente.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como funciona o pagamento pela gestão?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>O valor da gestão é definido conforme a complexidade e o escopo do projeto, e é apresentado na proposta após a reunião estratégica.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Existe contrato de fidelidade?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>As condições de contrato são explicadas com clareza na proposta, sem letras miúdas escondidas.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Você só sobe anúncio ou também define estratégia?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>O trabalho começa no diagnóstico e na estratégia. Subir campanha é a etapa de execução, não o início do processo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Depois de preencher o formulário, o que acontece?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Suas respostas são analisadas individualmente e, fazendo sentido seguir, entramos em contato pelo WhatsApp para agendar uma conversa.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="final-cta">
+      <span class="eyebrow" style="color:#E7C88A;">Vagas limitadas por mês</span>
+      <h2>Nem todo negócio será atendido — e isso é proposital.</h2>
+      <p>Cada análise é feita individualmente, o que limita o número de negócios que consigo atender com profundidade a cada mês. Preencha o formulário para saber se há espaço para o seu.</p>
+      <a href="#formulario" class="btn btn-primary">Quero solicitar meu diagnóstico</a>
+      <div class="exclusive-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+        Análise individual · Sem fila automática · Resposta pelo WhatsApp
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Veracce Essenza — Marketing Digital · CNPJ 59.584.044/0001-59</div>
+    <div class="fine">Meta Ads · Google Ads · Estratégia baseada em dados</div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="#formulario" class="btn btn-primary">Quero meu diagnóstico</a>
+</div>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o=>{
+        o.classList.remove('open');
+        o.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Hero funnel animation on load / view
+  function animateFunnel(){
+    document.querySelectorAll('.funnel-fill').forEach(el=>{
+      const w = el.getAttribute('data-width');
+      requestAnimationFrame(()=>{ el.style.width = w + '%'; });
+    });
+    document.querySelectorAll('.funnel-stage-val').forEach(el=>{
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      const dur = 1200;
+      const start = performance.now();
+      function tick(now){
+        const p = Math.min((now-start)/dur, 1);
+        const eased = 1 - Math.pow(1-p, 3);
+        el.textContent = Math.round(target*eased).toLocaleString('pt-BR');
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+  window.addEventListener('load', ()=> setTimeout(animateFunnel, 300));
+
+  // Scroll reveal for cards / sections
+  const revealTargets = document.querySelectorAll('.pain-card, .diff-card, .whom-item, .tl-step, .path-row');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.style.opacity = 1;
+        e.target.style.transform = 'translateY(0)';
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.15});
+  revealTargets.forEach(el=>{
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(14px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    io.observe(el);
+  });
+
+  // Form submit -> salva no Google Sheets -> redireciona para o WhatsApp
+  // ATENÇÃO: cole aqui a URL do Web App publicado (termina em /exec).
+  // O link do editor do Apps Script (.../edit) NÃO funciona aqui — é preciso
+  // ir em "Implantar > Nova implantação" e copiar a URL gerada.
+  const SHEETS_ENDPOINT = 'COLE_AQUI_A_URL_DO_APPS_SCRIPT_TERMINADA_EM_/exec';
+
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const form = this;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Enviando...';
+
+    const data = new FormData(form);
+    const payload = {
+      nome: data.get('nome'),
+      empresa: data.get('empresa'),
+      segmento: data.get('segmento'),
+      cidade: data.get('cidade'),
+      telefone: data.get('telefone'),
+      instagram: data.get('instagram') || '-',
+      site: data.get('site') || '-',
+      investimento: data.get('investimento'),
+      objetivo: data.get('objetivo')
+    };
+
+    function goToWhatsApp(){
+      const msg = `Olá, Veracce Essenza! Vim pela landing page e quero solicitar meu diagnóstico.%0A%0A`+
+        `*Nome:* ${payload.nome}%0A*Empresa:* ${payload.empresa}%0A*Segmento:* ${payload.segmento}%0A*Cidade:* ${payload.cidade}%0A`+
+        `*Telefone:* ${payload.telefone}%0A*Instagram:* ${payload.instagram}%0A*Site:* ${payload.site}%0A`+
+        `*Investimento atual:* ${payload.investimento}%0A*Objetivo principal:* ${payload.objetivo}`;
+
+      const whatsappNumber = '5561981406381';
+      window.location.href = `https://wa.me/${whatsappNumber}?text=${msg}`;
+    }
+
+    // 'no-cors' porque o Apps Script não devolve cabeçalhos CORS legíveis pelo navegador.
+    // Isso significa que não conseguimos ler a resposta, mas o dado chega e é salvo mesmo assim.
+    fetch(SHEETS_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    })
+    .catch(function(err){
+      console.error('Falha ao salvar no Sheets:', err);
+    })
+    .finally(function(){
+      goToWhatsApp();
+    });
+  });
+</script>
+
+</body>
+</html>
